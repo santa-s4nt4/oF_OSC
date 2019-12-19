@@ -19,9 +19,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	//åªç›ÇÃÉ}ÉEÉXÇÃèÍèäÇ…â~Çï`âÊ
-	color += ofRandom(-1, 1);
-	ofSetColor(ofRandom(mouseX)/2, ofRandom(mouseY)/2, ofRandom(1, 255)*3, 70);
+	ofSetColor(ofRandom(mouseX) / 2, ofRandom(mouseY) / 2, ofRandom(1, 255) * 3, 70);
 	ofDrawCircle(mouseX, mouseY, ofRandom(5, 8));
 }
 
@@ -62,6 +60,9 @@ void ofApp::mousePressed(int x, int y, int button){
 	m.setAddress("/mouse/button");
 	m.addIntArg(1);
 	sender.sendMessage(m);
+
+	ofSetColor(ofRandom(mouseX) / 2, ofRandom(mouseY) / 2, ofRandom(1, 255) * 3, 95);
+	ofDrawCircle(mouseX, mouseY, ofRandom(30, 40));
 }
 
 //--------------------------------------------------------------
@@ -70,6 +71,9 @@ void ofApp::mouseReleased(int x, int y, int button){
 	m.setAddress("/mouse/button");
 	m.addIntArg(0);
 	sender.sendMessage(m);
+
+	ofSetColor(ofRandom(mouseX) / 2, ofRandom(mouseY) / 2, ofRandom(1, 255) * 3, 95);
+	ofDrawCircle(mouseX, mouseY, ofRandom(30, 40));
 }
 
 //--------------------------------------------------------------
