@@ -2,7 +2,11 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(0, 0, 0);
+	ofBackground(0);
+	ofSetCircleResolution(64);
+	ofSetBackgroundAuto(false);
+	ofEnableBlendMode(OF_BLENDMODE_ADD);
+	color = 100;
 
 	// 指定したIPアドレスとポート番号でサーバーに接続
 	sender.setup(HOST, PORT);
@@ -14,10 +18,11 @@ void ofApp::update(){
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
 	//現在のマウスの場所に円を描画
-	ofSetColor(255, 255, 255);
-	ofDrawCircle(mouseX, mouseY, 10);
+	color += ofRandom(-1, 1);
+	ofSetColor(ofRandom(mouseX)/2, ofRandom(mouseY)/2, ofRandom(1, 255)*3, 70);
+	ofDrawCircle(mouseX, mouseY, ofRandom(5, 8));
 }
 
 //--------------------------------------------------------------

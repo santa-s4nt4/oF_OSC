@@ -27,4 +27,6 @@ class ofApp : public ofBaseApp{
 
 		// OSCMessage‚Ì‘—M
 		ofxOscSender sender;
+
+		int color;
 };
